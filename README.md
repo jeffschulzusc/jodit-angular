@@ -1,111 +1,27 @@
-> Hey. Due to the fact that I do not use Angular in my projects, I cannot fix plugin errors in a timely manner. If you want the plugin to develop, send PR or better become a contributor
+# JoditAngular
 
-# Jodit Angular Component
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
-[![npm](https://img.shields.io/npm/v/jodit-angular.svg)](https://www.npmjs.com/package/jodit-angular)
-[![npm](https://img.shields.io/npm/dm/jodit-angular.svg)](https://www.npmjs.com/package/jodit-angular)
-[![npm](https://img.shields.io/npm/l/jodit-angular.svg)](https://www.npmjs.com/package/jodit-angular)
+## Development server
 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-This package is a wrapper around [Jodit](https://xdsoft.net/jodit/) to make it easier to use in a Angular application.
+## Code scaffolding
 
-## for contributors
-The editor component itselt is located in the `jodit-angular` folder and packaged into a redistributable package with the [ng-packagr](https://www.npmjs.com/package/ng-packagr) tool. A test app has been created with the @angular/cli. It is located in the src directory and a dev server can be started by using the `npm start` command.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Installation
-```bash
-$ npm install jodit-angular
-```
+## Build
 
-## Usage
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Loading the component
+## Running unit tests
 
-Import the EditorModule from the npm package like this:
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-```typescript
-import { JoditAngularModule } from 'jodit-angular';
-```
+## Running end-to-end tests
 
-And add it to you application module:
-```typescript
-// This might look different depending on how you have set up your app
-// but the important part is the imports array
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    JoditAngularModule // <- Important part
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-```
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Using the component in your templates
-Use the editor in your templates like this:
+## Further help
 
-```html
-<jodit-editor [config]="{buttons: 'bold'}"></jodit-editor>
-```               
-
-In config you can set all [Jodit's options](https://xdsoft.net/jodit/play.html)
-
-**Note about toolbar buttons override:**
-
-Jodit editor apply a different toolbar buttons layout based on width available for the editor itself.
-So a different width size for editor will show a different buttons layout.
-The "buttons" config setting in the example above will override only the default toolbar buttons for large widths.
-If you want to override buttons displayed on all editor sizes use something like this:
-
-```
-<jodit-editor
-  [config]="{
-      buttons: 'bold,strikethrough,underline,italic'
-      buttonsMD: 'bold,strikethrough,underline,italic'
-      buttonsSM: 'bold,strikethrough,underline,italic'
-      buttonsXS: 'bold,strikethrough,underline,italic'
-      };"
-></jodit-editor>     
-```      
-
-## Event binding
-You can also bind editor events via a shorthand prop on the editor, for example:
-
-```html
-<jodit-editor (onChange)="handleEvent($event)"></jodit-editor>
-```
-
-### Events list
-
-* onChange
-* onKeydown
-* onMousedown
-* onClick
-* onFocus
-* onPaste
-* onResize
-* onBeforeEnter
-* onBeforeCommand
-* onAfterCommand
-* onAfterExec
-* onAfterPaste
-* onChangeSelection
-
-Where the handler gets called with an object containing the properties event, which is the event object, and editor, which is a reference to the editor.
-
-### Versions
-
-* Angular <= 8 use v1.0.*
-* Angular 9 use v1.9.*
-* Angular 10 use v1.10.*
-* Angular 11 use v1.11.*
-* Angular 12 use v1.12.*
-* Angular 13 use v1.13.*
-* Angular 14 use v1.14.*
-
-License
------
-This package is available under `MIT` License.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
